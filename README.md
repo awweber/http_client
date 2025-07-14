@@ -26,11 +26,11 @@ Entwicklung eines IoT-Geräts, das:
 
 ## 🚀 Installation und Setup
 
-### 1. Auf dem Entwicklungsrechner (Ubuntu)
+### 1. Auf dem Entwicklungsrechner (Linux)
 
 ```bash
 # Repository klonen oder Dateien kopieren
-cd /home/alex/Code/velpTec/exercises/http_client
+cd ~/Code/iot_project/http_client
 
 # Lokalen Test durchführen
 make clean && make local && make test
@@ -40,7 +40,7 @@ make clean && make local && make test
 
 ```bash
 # SSH-Verbindung zum Pi
-ssh pi@<RPI_IP>
+ssh user@<RASPBERRY_PI_IP>
 
 # Arbeitsverzeichnis erstellen
 mkdir -p ~/iot_sensor
@@ -52,10 +52,10 @@ sudo apt install build-essential libcurl4-openssl-dev
 
 # Dateien übertragen (vom Entwicklungsrechner)
 # Methode 1: Automatisch
-make install RPI_HOST=<RPI_IP>
+make install RPI_HOST=<RASPBERRY_PI_IP>
 
 # Methode 2: Manuell
-scp http_client.c Makefile config.h pi@<RPI_IP>:~/iot_sensor/
+scp http_client.c Makefile config.h user@<RASPBERRY_PI_IP>:~/iot_sensor/
 
 # Kompilieren
 make local
@@ -69,9 +69,9 @@ make local
 Die Konfiguration erfolgt in `config.h`:
 
 ```c
-#define DEFAULT_SERVER_URL "http://your-server.com/api/sensor"
-#define SENSOR_READ_INTERVAL_SEC 30  // Messintervall in Sekunden
-#define DEVICE_ID "your_device_name"
+#define HTTP_URL "http://your-server.com/api/sensors"
+#define SENSOR_READ_INTERVAL 30  // Messintervall in Sekunden
+#define DEVICE_ID "your_device_id"
 ```
 
 ## 📊 Datenformat
@@ -80,7 +80,7 @@ Das Programm sendet JSON-Daten im folgenden Format:
 
 ```json
 {
-  "device_id": "raspi_sensor_01",
+  "device_id": "device_001",
   "timestamp": 1742515200,
   "temperature": 23.45,
   "humidity": 65.20,
@@ -173,7 +173,7 @@ curl_easy_setopt(curl, CURLOPT_SSL_VERIFYHOST, 2L);
 
 3. **Permission denied beim Service**
    ```bash
-   sudo chmod +x /home/pi/iot_sensor/http_client
+   sudo chmod +x /home/user/iot_sensor/http_client
    sudo systemctl daemon-reload
    ```
 
@@ -191,4 +191,4 @@ Dieses Projekt ist für Bildungszwecke erstellt.
 
 ## 👨‍💻 Autor
 
-Entwickelt für die velpTec IoT-Übungsaufgabe.
+Entwickelt für IoT-Übungsaufgaben und Embedded Linux-Projekte.
