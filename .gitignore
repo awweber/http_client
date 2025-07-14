@@ -1,0 +1,205 @@
+# ========================================
+# IoT HTTP-Client .gitignore
+# ========================================
+
+# Compiled binaries
+http_client
+http_client_rpi
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Archive files
+*.tar
+*.tar.gz
+*.tar.bz2
+*.zip
+*.7z
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Core dumps
+core
+core.*
+
+# Build directories
+build/
+dist/
+bin/
+obj/
+
+# ========================================
+# Development Tools
+# ========================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ========================================
+# System Files
+# ========================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ========================================
+# Logs and Runtime Files
+# ========================================
+
+# Log files
+*.log
+*.log.*
+logs/
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Dependency directories
+node_modules/
+
+# ========================================
+# Project Specific
+# ========================================
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Configuration overrides (keep config.h but ignore local configs)
+config_local.h
+local_config.h
+.env
+.env.local
+
+# SSH keys and certificates
+*.pem
+*.key
+*.crt
+*.cert
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+
+# Test files and temporary data
+test_output/
+temp/
+tmp/
+
+# Documentation build
+docs/_build/
+*.pdf
+
+# Package managers
+.npm
+.yarn
+package-lock.json
+yarn.lock
+
+# ========================================
+# Hardware/Embedded Specific
+# ========================================
+
+# Firmware files
+*.bin
+*.hex
+*.uf2
+
+# Hardware debugging
+*.gdb_history
+
+# Raspberry Pi specific
+*.img
+*.raspbian
+
+# Cross-compilation artifacts
+*-linux-gnu
+*-arm-*
+
+# ========================================
+# Git specific
+# ========================================
+
+# Merge conflict files
+*.orig
+*.rej
